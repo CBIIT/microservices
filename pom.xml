@@ -300,7 +300,8 @@
 				    </execution>
 				  </executions>
 				  <configuration>
-					  <contextDirectory>${project.build.directory}</contextDirectory>
+				    <dockerfile>${project.basedir}/dockerfiles/springboot-dockerfile</dockerfile>
+				    <contextDirectory>${project.build.directory}</contextDirectory>
 				    <repository>cbiitssrepo/springboot</repository>
 				    <tag>latest</tag>
 				    <buildArgs>
