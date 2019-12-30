@@ -291,6 +291,27 @@
 				<artifactId>hyrts-maven-plugin</artifactId>
 				<version>1.0.1</version>
 			</plugin>
+			<plugin>
+				  <groupId>com.spotify</groupId>
+				  <artifactId>dockerfile-maven-plugin</artifactId>
+				  <version>1.4.13</version>
+				  <executions>
+				    <execution>
+				      <id>default</id>
+				      <goals>
+					<goal>build</goal>
+					<goal>push</goal>
+				      </goals>
+				    </execution>
+				  </executions>
+				  <configuration>
+				    <repository>cbiitssrepo/springboot</repository>
+				    <tag>latest</tag>
+				    <buildArgs>
+				      <WAR_FILE>${project.build.finalName}.war</WAR_FILE>
+				    </buildArgs>
+				  </configuration>
+			</plugin>
 		</plugins>
 	</build>
 
